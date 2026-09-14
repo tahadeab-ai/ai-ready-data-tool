@@ -22,3 +22,25 @@ def read_rows(path):
     if not rows:
         return [], []
     return rows[0], rows[1:]
+
+
+def write_rows(header, rows, path):
+    os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
+    with open(path, "w", newline="", encoding="utf-8") as f:
+        writer = csv.writer(f)
+        if header:
+            writer.writerow(header)
+        writer.writerows(rows)
+
+
+
+def normalize_columns(header):
+
+    out = []
+    for name in header:
+        name = name.strip().lower()
+        name = re.sub(r"[^\w\s]", "", name) 
+        name = re.sub(r"\s+", "_", name.strip())
+        out.append(name.strip("_"))
+    return out
+
