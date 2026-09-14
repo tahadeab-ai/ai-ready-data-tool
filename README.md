@@ -1,3 +1,1 @@
-# ai-ready-data-tool
-# ai-ready-data-tool
-# ai-ready-data-tool
+قرائه و تصحيح من ملف csv
