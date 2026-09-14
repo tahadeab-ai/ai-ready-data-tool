@@ -7,6 +7,8 @@ output: output/clean.csv
 #   mean   = المتوسط الحسابي
 #   median = الوسيط (أمتن أمام القيم الشاذة)
 #   drop   = حذف الصف كاملاً
-missing_strategy: dropp
+missing_strategy: 
+  numeric: median
+  categorical: drop
 
 drop_duplicates: true
